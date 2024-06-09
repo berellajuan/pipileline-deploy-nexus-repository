@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    docker.withRegistry( 'http://nexus-repository:8083', USUARIO ) { /* Autenticamos con Docker Hub utilizando el nombre de usuario */
+                    docker.withRegistry( 'http://127.0.0.1:8083', USUARIO ) { /* Autenticamos con Docker Hub utilizando el nombre de usuario */
                         newApp.push() /* Subimos la imagen de Docker al repositorio de Docker Hub */
                     }
                 }
